@@ -132,9 +132,9 @@
 /*** KONFIGURATION ***/
 // 24 st 5-bokstavsord (VERSALER). Byt ut mot dina egna ord. Alla måste vara exakt 5 tecken.
 const words = [
-  "APPLE","SANTA","GIFTY","SWEET","MERRY","CHEER","LIGHT","SNOWY","ANGEL","BLAZE",
-  "FRISK","GLIMR","STARS","BUNNY","FROST","JOLLA","KVIST","SNABB","KLAPP","HEART",
-  "GAVEL","ISBIT","GLANS","GODIS"
+  "SKROV","FRAKT","TROSS","BLOCK","FLÖDE","GRUND","KARTA","SKEPP","STÄMP","GRÄVA",
+  "PÅLAR","SKEDE","KODER","TREND","FÄRJA","KILAR","BULTA","SLIPA","SKALA","TIDER",
+  "BOMMA","ANKRA","SPONT","SLUSS"
 ];
 
 // År och månad
@@ -209,8 +209,8 @@ function updateTitle(){
 }
 
 function updateDoorStates(){
-  //const today = new Date();
-  const today = new Date(2025, 11, 20); // för testning, ändra till dagens datum vid produktion
+  const today = new Date();
+  //const today = new Date(2025, 11, 24); // för testning, ändra till dagens datum vid produktion
   for(let d=1; d<=24; d++){
     const door = document.querySelector(`.door[data-day='${d}']`);
     if(!door) continue;
@@ -401,8 +401,8 @@ function loadProgress() {
 }
 
 function updateTodayDate() {
-  //const today = new Date();
-  const today = new Date(2025, 11, 20); // för testning, ändra till dagens datum vid produktion
+  const today = new Date();
+  //const today = new Date(2025, 11, 24); // för testning, ändra till dagens datum vid produktion
   const day = today.getDate().toString().padStart(2,'0');
   const month = (today.getMonth()+1).toString().padStart(2,'0'); // 0-indexerat
   const year = today.getFullYear();
